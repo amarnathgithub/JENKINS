@@ -1,0 +1,36 @@
+PRE-REQUISITES:-
+================
+*Java must be installed
+
+
+
+INSTALLATION & CONFIGURATION:-
+============================
+
+1. Update yum repo
+   #yum update
+
+2. Add jenkins repo to yum repo
+   #wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+3. Install stable version of jenkins
+   #rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+4. yum install -y jenkins
+
+5. netstat -tulpn | grep 8080 to see if 8080 port is occupied by any other
+
+6. #systemctl start jenkins && systemctl enable jenkins
+
+7. http://localhost:8080 in browser
+
+8. Now copy the key from cat /var/lib/jenkins/secrets/initialAdminPassword
+
+9. Select “install suggested plugins”
+
+10. continue as admin
+
+11. Click on “save and finish”
+
+12. Start installing jenkins
+
