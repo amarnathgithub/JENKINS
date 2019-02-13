@@ -1,0 +1,23 @@
+INTEGRATING JENKINS WITH ANSIBLE FOR DEPLOYMENT IN A FREE STYLE PROJECT:-
+========================================================================
+
+vi /ansible/jenkins-tomcat.yml
+-------------------------------------------------------------------------------------------------------
+
+# copywarfile.yml
+---
+- hosts: demo
+  connection: ssh
+  gather_facts: false
+  sudo: true
+  user: root
+
+  tasks:
+    - name: copy jar/war onto tomcat servers
+      copy:
+        src: /var/lib/jenkins/workspace/job1/webapp/target/webapp.war
+        dest: /usr/share/tomcat/webapps/
+
+#copying from my jenkins workspace to tomcat webapps
+
+-----------------------------------------------------------------------------------------------------------
